@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+<title>Chhavi Kamboj</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #d8cfc2;
+  font-family: 'DM Sans', sans-serif;
+  color: #111;
+}
+
+/* ================= TOP TITLE ================= */
+
+.site-title {
+  text-align: center;
+  padding: 48px 0 30px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  font-size: 20px;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero-section {
+  position: relative;
+  background: #e6b8b5;
+  padding-bottom: 160px; /* space for wave */
+}
+
+/* NAV */
+
+.nav {
+  width: 1100px;
+  margin: 0 auto;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-center {
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+/* HERO CONTENT */
+
+.hero-content {
+  width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.hero-text {
+  width: 48%;
+}
+
+.hey {
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 420px;
+}
+
+/* HERO IMAGE */
+
+.hero-image{
+width:420px;
+height:420px;
+border-radius:50%;
+overflow:hidden;
+background:#f3c9c6;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.hero-image img{
+width:100%;
+transition:transform .6s;
+}
+
+.hero-image:hover img{
+transform:scale(1.05);
+}
+
+/* FLOATING STARS */
+
+.star{
+position:absolute;
+width:22px;
+height:22px;
+opacity:.7;
+animation:float 4s ease-in-out infinite;
+}
+
+.star svg{
+fill:#fde2aa;
+}
+
+.star1{top:280px;left:50%;}
+.star2{top:360px;right:120px;animation-delay:1s;}
+.star3{top:420px;left:60%;animation-delay:2s;}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+/* ================= WAVE ================= */
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.wave svg {
+  display: block;
+  width: 100%;
+  height: 160px;
+}
+
+/* ================= NEXT SECTION ================= */
+
+.next-section {
+  width: 1100px;
+  margin: 120px auto 80px;
+  display: flex;
+  align-items: center;
+  gap: 90px;
+}
+
+.next-img {
+  width: 360px;
+  transform: rotate(-6deg);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.next-img img {
+  width: 100%;
+  border: 14px solid white;
+}
+
+.next-text {
+  max-width: 520px;
+}
+
+.script {
+  font-family: 'Caveat', cursive;
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.next-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+.next-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 34px;
+  background: #2f2611b4;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* ================= CURSOR SPARKLE ================= */
+
+
+.sparkle{
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  pointer-events:none;
+  background:#fde2aa;
+  clip-path: polygon(
+  50% 0%, 61% 35%, 98% 35%,
+  68% 57%, 79% 91%,
+  50% 70%, 21% 91%,
+  32% 57%, 2% 35%,
+  39% 35%
+  );
+  animation: sparkleFade 1100ms linear forwards;
+  z-index:9999;
+}
+
+@keyframes sparkleFade{
+  0%{
+    transform: scale(1);
+    opacity:1;
+  }
+  100%{
+    transform: scale(0);
+    opacity:0;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1100px){
+
+  .nav,
+  .hero-content,
+  .next-section {
+    width: 92%;
+  }
+
+  .hero-content,
+  .next-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text,
+  .next-text {
+    width: 100%;
+  }
+
+  .hero-image {
+    margin-top: 50px;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero-section">
+
+  <div class="nav">
+    <div class="nav-left">
+      <div>NINETEEN</div>
+      <div>LEO</div>
+    </div>
+    <div class="nav-center">✶ CHHAVI KAMBOJ ✶</div>
+    <div class="nav-right">
+      <div>STUDENT</div>
+      <div>DEHRADUN</div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hey">hey there</div>
+      <h1>I’m Chhavi Kamboj</h1>
+      <blockquote>
+      <p>This is my weekly journal — aka the place where I overanalyze conversations, romanticize sunsets, question my life choices, and document it like it’s a coming-of-age film.</p>
+      <p>It’s honest. It’s dramatic. It’s funny in a “why am I like this” way. If nothing else, it proves I survived another week.</p>
+    </blockquote>
+    </div>
+
+    <div class="hero-image">
+      <img src="images/WhatsApp Image 2026-02-16 at 12.06.49 PM.jpeg" alt="">
+    </div>
+  </div>
+
+  <!-- Stars -->
+  <div class="star star1">
+    <svg viewBox="0 0 24 24">
+      <polygon points="12,0 15,9 24,12 15,15 12,24 9,15 0,12 9,9"/>
+    </svg>
+  </div>
+
+  <div class="star star2">
+    <svg viewBox="0 0 24 24">
+      <polygon points="12,0 15,9 24,12 15,15 12,24 9,15 0,12 9,9"/>
+    </svg>
+  </div>
+
+  <div class="star star3">
+    <svg viewBox="0 0 24 24">
+      <polygon points="12,0 15,9 24,12 15,15 12,24 9,15 0,12 9,9"/>
+    </svg>
+  </div>
+
+  <!-- FULL WIDTH SVG WAVE -->
+  <div class="wave">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path fill="#d8cfc2"
+        d="M0,256L120,224C240,192,480,128,720,144C960,160,1200,256,1320,272L1440,288L1440,320L0,320Z">
+      </path>
+    </svg>
+  </div>
+
+</section>
+
+<section class="next-section">
+
+  <div class="next-img">
+    <img src="images/WhatsApp Image 2026-02-14 at 8.50.13 PM.jpeg" alt="">
+  </div>
+
+  <div class="next-text">
+    <div class="script">in this small corner</div>
+    <h2>I turn ordinary weeks into something worth remembering</h2>
+    <p>
+      I am a collection of quiet thoughts and loud dreams, constantly learning how to exist in between the two. I notice small things — the way light falls on ordinary afternoons, the feeling of a song that understands me too well, the poetry hidden inside everyday chaos. I think deeply, feel deeply, and sometimes get lost in my own reflections. I am growing, unfolding, and becoming — slowly, honestly, imperfectly. This space is where my weeks turn into words, where moments are held still for a second longer, and where I try to make sense of the beautiful, complicated experience of being human.
+    </p>
+    <a href="year.html" class="btn">MORE ABOUT ME →</a>
+  </div>
+
+</section>
+
+<script>
+
+let lastSparkle = 0;
+
+window.addEventListener("mousemove", function(e){
+
+  const now = Date.now();
+
+  if(now - lastSparkle > 100){
+
+    const sparkle = document.createElement("div");
+    sparkle.className = "sparkle";
+
+    /* random size */
+
+    const size = Math.random()*8 + 6;
+
+    sparkle.style.width = size + "px";
+    sparkle.style.height = size + "px";
+
+    /* viewport coordinates (important fix) */
+
+    sparkle.style.left = e.clientX + "px";
+    sparkle.style.top = e.clientY + "px";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => {
+      sparkle.remove();
+    },700);
+
+    lastSparkle = now;
+
+  }
+
+});
+
+</script>
+</body>
+</html>
